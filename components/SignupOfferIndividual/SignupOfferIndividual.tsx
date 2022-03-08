@@ -19,6 +19,7 @@ const SignupOfferIndividual = ({}: ISignupOfferIndividualProps) => {
           text={t('signup.offer.individualCard.ctaButton')}
           route={'https://harta.sprijindeurgenta.ro'}
           size={'medium'}
+          openInNewTab={true}
         />
       </div>
     </div>

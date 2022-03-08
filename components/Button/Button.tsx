@@ -9,6 +9,7 @@ export interface IButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary'
   size?: 'small' | 'medium' | 'large'
   className?: string
+  openInNewTab?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -59,6 +60,7 @@ const Button = ({
   variant,
   size,
   className,
+  openInNewTab,
   onClick,
   type = 'button',
   ...rest
@@ -66,7 +68,7 @@ const Button = ({
   if (route) {
     return (
       <Link href={route} passHref>
-        <a className={clsx("w-full", className)}>
+        <a className={clsx("w-full", className)} target={openInNewTab ? '_blank': '_self'}>
           <ButtonInner text={text} variant={variant} size={size} {...rest} />
         </a>
       </Link>
